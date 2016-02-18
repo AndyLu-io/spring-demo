@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+	
+	<!-- 配置一个 bean -->
+	<bean id="helloWorld" class="com.beibei.spring.HelloWorld">
+		<!-- 为属性赋值 -->
+		<property name="name" value="Jerry1"></property>
+	</bean>
+	
+	<bean id="car" class="com.beibei.spring.Car">
+		<constructor-arg value="Audi" index="0" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="100" index="1"></constructor-arg>
+	</bean>
+	
+	<bean id="car2" class="com.beibei.spring.Car">
+		<constructor-arg value="Baoma" index="0" type="java.lang.String"></constructor-arg>
+		<constructor-arg value="1004" index="1"></constructor-arg>
+	</bean>
+ 
+ 
+ 	<bean id="person" class="com.beibei.spring.Person">
+ 		<property name="name" value="Tom"></property>
+ 		<property name="age" value="24"></property>
+ 		<property name="car" ref="car"></property>
+ 		<property name="car.privce" value="456"></property>
+ 		
+ 	</bean>
+ 	
+ 	<bean id="person2" class="com.beibei.spring.Person">
+ 		<property name="name" value="Jack"></property>
+ 		<property name="age" value="25"></property>
+ 	</bean>
+ 	
+ 	
+	
+</beans>
